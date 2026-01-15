@@ -1,0 +1,23 @@
+{
+	"type"              : "lib",
+	"template"          : "clean",
+	"pm"                : "bun",
+	"repo": {
+		"org"           : "cruxext",
+		"name"          : "theme",
+		"version"       : "0.0.1",
+		"desc"          : "Lightweight reactive theme manager for CruxJS with dark/light mode support and persistent storage.",
+		"kw"            : ["cruxjs", "extension", "theme"],
+		"license"       : "MIT",
+		"issues"        : "https://github.com/cruxext-org/theme/issues",
+		"homepage"      : "https://github.com/cruxext-org/theme#readme",
+		"git_url"       : "git+https://github.com/cruxext-org/theme.git"
+	},
+	"author": {
+		"id"            : "maysara-elshewehy",
+		"name"          : "Maysara",
+		"email"         : "maysara.elshewehy@gmail.com",
+		"url"           : "https://github.com/maysara-elshewehy"
+	},
+	"createdAt"         : "2026-01-14T23:35:20.441Z"
+}
