@@ -6,7 +6,7 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { ThemeManagerConfig                 } from "../types";
+    import { ThemeConfig                 } from "../types";
     import { createStore, Storage               } from '@minejs/store';
     import { signal, effect                     } from '@minejs/signals';
 
@@ -23,7 +23,7 @@
             public store: ReturnType<typeof createStore>;
             public signal: ReturnType<typeof signal<string>>;
 
-            constructor(public config: ThemeManagerConfig) {
+            constructor(public config: ThemeConfig) {
 
                 const storage = new Storage({ type: 'local' });
 

@@ -8,7 +8,7 @@
 </div>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/v-0.0.4-black"/>
+    <img src="https://img.shields.io/badge/v-0.0.5-black"/>
     <a href="https://github.com/cruxext-org"><img src="https://img.shields.io/badge/🔥-@cruxext-black"/></a>
     <br>
     <img src="https://img.shields.io/github/issues/cruxext-org/theme?style=flat" alt="Github Repo Issues" />
@@ -98,7 +98,7 @@
 
     - ### API ⛓️
 
-        - #### `createThemeExtension(config?: ThemeManagerConfig): ClientExtension`
+        - #### `createThemeExtension(config?: ThemeConfig): ClientExtension`
             > Initializes the theme extension for your CruxJS application. Call this during your app bootstrap.
 
             ```typescript

@@ -7,7 +7,7 @@
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
     import { ClientExtension, ExtensionContext  } from "@cruxjs/client";
-    import { ThemeManagerConfig                 } from "./types";
+    import { ThemeConfig                 } from "./types";
     import { ThemeManager                       } from "./mod/theme_manager";
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
@@ -26,7 +26,7 @@
     export const getCurrentTheme    = () => getThemeManager().getTheme();
 
     // Theme extension
-    export function createThemeExtension(config?: ThemeManagerConfig) : ClientExtension {
+    export function createThemeExtension(config?: ThemeConfig) : ClientExtension {
         return {
             name : 'ThemeExtension',
 

@@ -6,6 +6,6 @@
 
 // ╔════════════════════════════════════════ TYPE ════════════════════════════════════════╗
 
-    export { ThemeConfig as ThemeManagerConfig  } from "@cruxjs/client";
+    export { ThemeConfig } from "@cruxjs/client";
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
