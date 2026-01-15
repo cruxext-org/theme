@@ -5,7 +5,7 @@
 	"repo": {
 		"org"           : "cruxext",
 		"name"          : "theme",
-		"version"       : "0.0.3",
+		"version"       : "0.0.4",
 		"desc"          : "Lightweight reactive theme manager for CruxJS with dark/light mode support and persistent storage.",
 		"kw"            : ["cruxjs", "extension", "theme"],
 		"license"       : "MIT",

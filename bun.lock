@@ -4,7 +4,7 @@
     "": {
       "name": "@cruxext/theme",
       "dependencies": {
-        "@cruxjs/client": "0.1.3",
+        "@cruxjs/client": "0.1.4",
         "@minejs/signals": "^0.0.6",
         "@minejs/store": "^0.0.3",
       },
@@ -26,7 +26,7 @@
     },
   },
   "packages": {
-    "@cruxjs/client": ["@cruxjs/client@0.1.3", "", { "dependencies": { "@cruxkit/core": "^0.0.2", "@minejs/browser": "^0.0.4", "@minejs/i18n": "^0.1.0", "@minejs/jsx": "^0.0.8", "@minejs/signals": "^0.0.6", "@minejs/store": "^0.0.3" }, "peerDependencies": { "bun": "^1.3.3" } }, "sha512-fDl44Af3l286o7OPFSXrfcuFAiMTZLf2qsurUrqwUqVgwjfyzEYpOLfYPFgkDTewvMl6bKSAVe7nqnJkN4TRwQ=="],
+    "@cruxjs/client": ["@cruxjs/client@0.1.4", "", { "dependencies": { "@cruxkit/core": "^0.0.2", "@minejs/browser": "^0.0.4", "@minejs/i18n": "^0.1.0", "@minejs/jsx": "^0.0.8", "@minejs/signals": "^0.0.6", "@minejs/store": "^0.0.3" }, "peerDependencies": { "bun": "^1.3.3" } }, "sha512-lf6TW9T/V5Grw4PDJDZhPQ2iTOPFd00MPVI4v/n0k/PJtJpTW9d3VR/06w4nyAIRs0Wyq7dEckVXHTvsiJkjQQ=="],
 
     "@cruxkit/core": ["@cruxkit/core@0.0.2", "", { "dependencies": { "@minejs/jsx": "^0.0.8", "@minejs/signals": "^0.0.6" }, "peerDependencies": { "bun": "^1.3.3" } }, "sha512-G7ECSbnS0dWnbG/u2JSvFBOpOXhwfCHF8uN3m7mxaba/xGszuYMqFwsOm2b61Esqb5p08SOFl5T4naLH5tPqtA=="],
 

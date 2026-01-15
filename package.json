@@ -1,6 +1,6 @@
 {
 	"name"                             : "@cruxext/theme",
-	"version"                          : "0.0.3",
+	"version"                          : "0.0.4",
 	"description"                      : "Lightweight reactive theme manager for CruxJS with dark/light mode support and persistent storage.",
 	"keywords"                         : ["cruxjs", "extension", "theme"],
 	"license"                          : "MIT",
@@ -40,7 +40,7 @@
 		"bun"                          : "^1.3.3"
 	},
 	"dependencies": {
-		"@cruxjs/client"               : "0.1.3",
+		"@cruxjs/client"               : "0.1.4",
 		"@minejs/signals"              : "^0.0.6",
 		"@minejs/store"                : "^0.0.3"
 	},
