@@ -8,12 +8,12 @@
 </div>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/v-0.0.1-black"/>
+    <img src="https://img.shields.io/badge/v-0.0.2-black"/>
     <a href="https://github.com/cruxext-org"><img src="https://img.shields.io/badge/🔥-@cruxext-black"/></a>
     <br>
     <img src="https://img.shields.io/badge/coverage-0%25-brightgreen" alt="Test Coverage" />
-    <img src="https://img.shields.io/github/issues/cruxext-orgz/theme?style=flat" alt="Github Repo Issues" />
-    <img src="https://img.shields.io/github/stars/cruxext-orgz/theme?style=social" alt="GitHub Repo stars" />
+    <img src="https://img.shields.io/github/issues/cruxext-org/theme?style=flat" alt="Github Repo Issues" />
+    <img src="https://img.shields.io/github/stars/cruxext-org/theme?style=social" alt="GitHub Repo stars" />
 </div>
 <br>
 
