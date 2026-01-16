@@ -6,9 +6,9 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { ThemeConfig                 } from "../types";
-    import { createStore, Storage               } from '@minejs/store';
-    import { signal, effect                     } from '@minejs/signals';
+    import { ThemeConfig            } from "../types";
+    import { createStore, Storage   } from '@minejs/store';
+    import { signal, effect         } from '@minejs/signals';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 

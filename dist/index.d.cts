@@ -1,5 +1,5 @@
-import { ThemeConfig, ClientExtension } from '@cruxjs/client';
-export { ThemeConfig } from '@cruxjs/client';
+import { ThemeConfig, ClientExtension } from '@cruxjs/base';
+export { ThemeConfig } from '@cruxjs/base';
 import { createStore } from '@minejs/store';
 import { signal } from '@minejs/signals';
 

@@ -6,8 +6,8 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
-    import { ClientExtension, ExtensionContext  } from "@cruxjs/client";
-    import { ThemeConfig                 } from "./types";
+    import { ClientExtension, ExtensionContext  } from "@cruxjs/base";
+    import { ThemeConfig                        } from "./types";
     import { ThemeManager                       } from "./mod/theme_manager";
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
