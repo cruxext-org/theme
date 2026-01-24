@@ -1,4 +1,4 @@
-// src/mod/theme_manager.ts
+// src/mod/manager.ts
 //
 // Made with ❤️ by Maysara.
 

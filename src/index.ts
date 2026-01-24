@@ -8,25 +8,29 @@
 
     import { ClientExtension, ExtensionContext  } from "@cruxjs/base";
     import { ThemeConfig                        } from "./types";
-    import { ThemeManager                       } from "./mod/theme_manager";
+    import { ThemeManager                       } from "./mod/manager";
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
 
 
-// ╔════════════════════════════════════════ MAIN ════════════════════════════════════════╗
+// ╔════════════════════════════════════════ INIT ════════════════════════════════════════╗
 
     // Theme manager instance
     let themeManager : ThemeManager;
 
-    // Exported theme functions
-    export const getThemeManager    = () => themeManager;
-    export const setTheme           = (themeName: string) => getThemeManager().setTheme(themeName);
-    export const toggleTheme        = () => getThemeManager().toggleTheme();
-    export const getCurrentTheme    = () => getThemeManager().getTheme();
+// ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
-    // Theme extension
-    export function createThemeExtension(config?: ThemeConfig) : ClientExtension {
+
+
+// ╔════════════════════════════════════════ CORE ════════════════════════════════════════╗
+
+    /**
+     * Create a theme extension
+     * @param config Theme configuration
+     * @returns Theme extension
+     */
+    export function themeExtension(config?: ThemeConfig) : ClientExtension {
         return {
             name : 'ThemeExtension',
 
@@ -56,7 +60,18 @@
         };
     };
 
-    // export
+    // Exported theme functions
+    export const getThemeManager    = () => themeManager;
+    export const setTheme           = (themeName: string) => getThemeManager().setTheme(themeName);
+    export const toggleTheme        = () => getThemeManager().toggleTheme();
+    export const getCurrentTheme    = () => getThemeManager().getTheme();
+
+// ╚══════════════════════════════════════════════════════════════════════════════════════╝
+
+
+
+// ╔════════════════════════════════════════ ════ ════════════════════════════════════════╗
+
     export * from "./types";
     export { ThemeManager };
 

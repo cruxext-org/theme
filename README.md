@@ -8,9 +8,10 @@
 </div>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/v-0.0.7-black"/>
+    <img src="https://img.shields.io/badge/v-0.0.8-black"/>
     <a href="https://github.com/cruxext-org"><img src="https://img.shields.io/badge/🔥-@cruxext-black"/></a>
     <br>
+    <img src="https://img.shields.io/badge/coverage-100%25-brightgreen" alt="Test Coverage" />
     <img src="https://img.shields.io/github/issues/cruxext-org/theme?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/cruxext-org/theme?style=social" alt="GitHub Repo stars" />
 </div>
@@ -25,17 +26,10 @@
 - ## Overview 👀
 
     - #### Why ?
-        > A lightweight, reactive theme management solution for dark/light mode switching with persistent storage and system preference detection, built for the CruxJS ecosystem.
+        > A lightweight, reactive theme management solution, built for [`@cruxjs`](https://github.com/cruxjs-org) ecosystem.
 
     - #### When ?
-        > Use this extension when you need to:
-        > - Implement dark/light mode switching in your application
-        > - Respect user's system color scheme preferences
-        > - Persist theme preferences across sessions
-        > - Build reactive UI components that respond to theme changes
-        > - Integrate theme management into CruxJS-based applications
-
-        > When using [@cruxjs/app](https://github.com/cruxjs-org/app) and [@cruxjs/client](https://github.com/cruxjs-org/client).
+        > When you need to manage theme preferences in your [`@cruxjs`](https://github.com/cruxjs-org) application.
 
     <br>
     <br>
@@ -49,45 +43,37 @@
     hmm i @cruxext/theme
     ```
 
-    ```ts
-    // in your ts files
-    import { ... } from `@cruxext/theme`;
-    ```
-
     <div align="center"> <img src="./assets/img/line.png" alt="line" style="display: block; margin-top:20px;margin-bottom:20px;width:500px;"/> </div>
     <br>
 
-    - ### Example
+    - ### Setup
 
         ```typescript
-        import { type JSXElement }                  from '@minejs/jsx';
-        import { effect, signal }                   from '@minejs/signals';
-        import { Button }                           from '@cruxkit/core';
-        import { toggleTheme, getCurrentTheme }     from '@cruxext/theme';
+        // in your client config at `client.ts` file, add the theme extension.
+        import { themeExtension } from `@cruxext/theme`;
 
-        export function MyComponent(): JSXElement {
-            const isDark = signal(getCurrentTheme() == 'dark');
+        const config: ClientManagerConfig = {
+            ...
 
-            effect(() => {
-                console.log('isDark:', isDark());
-                const btn = document.querySelector('#theme_button');
-                if(!btn) return;
-                toggleTheme();
+            extensions: [
+                ...
+                createThemeExtension(),
+            ],
+        };
+        ```
 
-                btn.textContent = isDark() ? '☀️ Light Mode' : '🌙 Dark Mode';
-            });
+    - ### Usage
 
-            return (
-                <Button
-                    id="theme_button"
-                    variant="solid"
-                    color="brand"
-                    onClick={() => isDark.set(!isDark())}
-                >
-                    {isDark() ? '☀️ Light Mode' : '🌙 Dark Mode'}
-                </Button>
-            );
-        }
+        ```typescript
+        import { toggleTheme, getCurrentTheme } from '@cruxext/theme';
+        import { Button } from '@cruxkit/button';
+
+        <Button
+            onClick={ () => toggleTheme() }
+            leftIcon={{name: getCurrentTheme() === 'light' ? 'sun' : 'moon' }}
+            >
+            Toggle Theme
+        </Button>
         ```
 
     <br>
@@ -95,60 +81,34 @@
 
 - ## Documentation 📑
 
-
     - ### API ⛓️
 
-        - #### `createThemeExtension(config?: ThemeConfig): ClientExtension`
-            > Initializes the theme extension for your CruxJS application. Call this during your app bootstrap.
+        - #### Main-Functions
 
             ```typescript
-            import { createThemeExtension } from '@cruxext/theme';
+            export function themeExtension(config?: ThemeConfig) : ClientExtension
 
-            const themeExt = createThemeExtension({
-                default: 'light',
-                available: ['light', 'dark', 'auto']
-            });
+            export const getThemeManager    = () => themeManager;
+            export const setTheme           = (themeName: string) => getThemeManager().setTheme(themeName);
+            export const toggleTheme        = () => getThemeManager().toggleTheme();
+            export const getCurrentTheme    = () => getThemeManager().getTheme();
             ```
 
-        - #### `setTheme(themeName: string): void`
-
-            > Sets the active theme to the specified name. Must be one of the available themes defined in config.
+        - #### Toast Class Methods
 
             ```typescript
-            import { setTheme } from '@cruxext/theme';
-
-            setTheme('dark');
+            getTheme        ()                  : string
+            setTheme        (themeName: string) : void
+            toggleTheme     ()                  : void
             ```
 
-        - #### `toggleTheme(): void`
-
-            > Toggles between available themes. Cycles through the first non-current available theme.
+        - #### Types
 
             ```typescript
-            import { toggleTheme } from '@cruxext/theme';
-
-            toggleTheme();
-            ```
-
-        - #### `getCurrentTheme(): string`
-
-            > Returns the name of the currently active theme.
-
-            ```typescript
-            import { getCurrentTheme } from '@cruxext/theme';
-
-            const current = getCurrentTheme(); // 'light' | 'dark' | etc.
-            ```
-
-        - #### `getThemeManager(): ThemeManager`
-
-            > Returns the ThemeManager instance for advanced usage and direct signal access.
-
-            ```typescript
-            import { getThemeManager, signal } from '@cruxext/theme';
-
-            const manager = getThemeManager();
-            const themeSignal = manager.signal; // reactive signal
+            export interface ThemeConfig {
+                default     : string;
+                available   : string[];
+            }
             ```
 
         <div align="center"> <img src="./assets/img/line.png" alt="line" style="display: block; margin-top:20px;margin-bottom:20px;width:500px;"/> </div>
@@ -156,14 +116,12 @@
 
     - ### Related 🔗
 
-        - ##### [@minejs/signals](https://github.com/minejs-org/signals)
-            > Reactive signals library used for theme state management
-
+        - ##### [@minejs/jsx](https://github.com/minejs-org/jsx)
         - ##### [@minejs/store](https://github.com/minejs-org/store)
-            > Persistent storage solution for maintaining theme preferences
+        - ##### [@minejs/signals](https://github.com/minejs-org/signals)
 
-        - ##### [@cruxkit/core](https://github.com/cruxkit/core)
-            > Core UI component library that works seamlessly with theming
+        - ##### [@cruxjs/client](https://github.com/cruxjs-org/client)
+        - ##### [@cruxjs/app](https://github.com/cruxjs-org/app)
 
 <!-- ╚═════════════════════════════════════════════════════════════════╝ -->
 

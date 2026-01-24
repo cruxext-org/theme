@@ -1,7 +1,7 @@
 {
 	"name"                             : "@cruxext/theme",
-	"version"                          : "0.0.7",
-	"description"                      : "Lightweight reactive theme manager for CruxJS with dark/light mode support and persistent storage.",
+	"version"                          : "0.0.8",
+	"description"                      : "A lightweight, reactive theme management solution, built for @cruxjs ecosystem.",
 	"keywords"                         : ["cruxjs", "extension", "theme"],
 	"license"                          : "MIT",
 	"homepage"                         : "https://github.com/cruxext-org/theme#readme",
@@ -48,12 +48,14 @@
 		"@eslint/js"                   : "^9.39.2",
 		"@stylistic/eslint-plugin"     : "^5.7.0",
 		"@types/bun"                   : "^1.3.6",
+		"@types/jsdom"                 : "^27.0.0",
 		"@types/node"                  : "^20.19.30",
 		"bun-plugin-dts"               : "^0.3.0",
 		"bun-types"                    : "^1.3.6",
+		"jsdom"                        : "^27.4.0",
 		"ts-node"                      : "^10.9.2",
 		"tsup"                         : "^8.5.1",
 		"typescript"                   : "^5.9.3",
-		"typescript-eslint"            : "^8.53.0"
+		"typescript-eslint"            : "^8.53.1"
 	}
 }

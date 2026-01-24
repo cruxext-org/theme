@@ -14,10 +14,15 @@ declare class ThemeManager {
     private applyTheme;
 }
 
+/**
+ * Create a theme extension
+ * @param config Theme configuration
+ * @returns Theme extension
+ */
+declare function themeExtension(config?: ThemeConfig): ClientExtension;
 declare const getThemeManager: () => ThemeManager;
 declare const setTheme: (themeName: string) => void;
 declare const toggleTheme: () => void;
 declare const getCurrentTheme: () => string;
-declare function createThemeExtension(config?: ThemeConfig): ClientExtension;
 
-export { ThemeManager, createThemeExtension, getCurrentTheme, getThemeManager, setTheme, toggleTheme };
+export { ThemeManager, getCurrentTheme, getThemeManager, setTheme, themeExtension, toggleTheme };
